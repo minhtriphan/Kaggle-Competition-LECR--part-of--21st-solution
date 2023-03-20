@@ -56,9 +56,9 @@ class Config(object):
         drive.mount('/content/drive')
     mode = 'train'
     use_tqdm = True
-    use_log = True
+    use_log = False
     debug = False
-    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     # Encoding model
     backbone = 'paraphrase-multilingual-mpnet-base-v4'    # 'microsoft/mdeberta-v3-base', 'xlm-roberta-base'
     tokenizer = AutoTokenizer.from_pretrained(backbone)
@@ -72,7 +72,7 @@ class Config(object):
     # Embedding model
     embedding_model = 'v17a'
     # Data
-    done_kfold_split = True
+    done_kfold_split = False
     nfolds = 5
     negative_sample_ratio = 0.3
     done_context = True

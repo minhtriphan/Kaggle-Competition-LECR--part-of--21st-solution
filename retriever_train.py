@@ -13,7 +13,7 @@ Original file is located at
 import os, gc, math, random, pickle, json, time
 import numpy as np
 import pandas as pd
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 tqdm.pandas()
 
 from sklearn.preprocessing import LabelEncoder
@@ -67,13 +67,13 @@ class Config(object):
     special_tokens_dict = {'additional_special_tokens': [sep_token]}
     tokenizer.add_special_tokens(special_tokens_dict)
     # Data
-    done_kfold_split = True
+    done_kfold_split = False
     processed_data = True
     nfolds = 5
     negative_sample = 5
     # Dataloader
-    max_len = 128
-    batch_size = 128 if not debug else 4
+    max_len = 32
+    batch_size = 32 if not debug else 4
     num_workers = os.cpu_count()
     # For training
     training_folds = [0, 1, 2, 3, 4]
@@ -108,7 +108,7 @@ class Config(object):
     # Scheduler
     scheduler_type = 'cosine'    # 'linear', 'cosine'
     if scheduler_type == 'cosine':
-        first_cycle_steps = 0.5
+        num_cycles = 0.5
     num_warmup_steps = 0.
     batch_scheduler = True
     # Paths
