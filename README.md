@@ -1,7 +1,7 @@
 # Kaggle-Competition-LECR--part-of--21st-solution
 This is a part of the 21st position in the Learning Equality - Curriculum Recommendation competition on Kaggle (https://www.kaggle.com/competitions/learning-equality-curriculum-recommendations)
 
-The entire model (retriever and re-ranker) gets 0.610/0.645 on public/private LB. This model alone can be at the 40th/1057 position in the competition.
+The entire model (retriever and re-ranker) gets 0.610/0.645 on public/private LB. This model alone can be at the 40th/1057 position in the competition. The inference notebook could be found here, https://www.kaggle.com/code/shinomoriaoshi/lecr-v17g-infer/notebook?scriptVersionId=120536829
 
 The structure of the retriever and the re-ranker are given in the below images
 
